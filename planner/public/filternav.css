@@ -1,0 +1,20 @@
+.filter-nav {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.filter-nav button {
+  background: none;
+  border: none;
+  color: #bbb;
+  outline: none;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-nav button.active {
+  color: #555;
+}

@@ -1,0 +1,43 @@
+.project {
+  margin: 20px auto;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgba(0, 0%, 0%, 0.5);
+  border-left: 0.4rem solid #f02b7a;
+}
+
+.project.complete {
+  border-left: 0.4rem solid #00ce89;
+}
+
+.project.complete .tick {
+  font-weight: bold;
+  color: #00ce89;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions .icons, a {
+  display: flex;
+  column-gap: 0.625rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #bbb;
+}
+
+.actions .icons a {
+  text-decoration: none;
+}
+
+.actions .material-icons:hover {
+  color: #777;
+}
+
+h3 {
+  cursor: pointer;
+}

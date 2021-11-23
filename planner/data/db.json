@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Refactor homepage",
+      "details": "Change to vue3",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "title": "Finish debugging",
+      "details": "Lorem ipsum",
+      "complete": false
+    },
+    {
+      "title": "Mesa agv",
+      "details": "Começar montagem",
+      "complete": true,
+      "id": 3
+    },
+    {
+      "title": "Agv roletes",
+      "details": "Desenhar a mesa",
+      "complete": true,
+      "id": 4
+    }
+  ]
+}
