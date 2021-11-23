@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Vue 3</title>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+  <div id="app">
+
+    <a :href="url">try me</a>
+    <div class="books" v-if="showBooks">
+      <ul>
+        <li v-for="book in filteredFav" :class="{fav: book.isFav}"
+        @click="toggleFav(book)">
+          <img :src="book.img" :alt="book.title">
+          <h3>{{book.title}}</h3>
+          <p>{{book.author}}</p>
+          <p>{{book.isFav}}</p>
+        </li>
+      </ul>
+    </div>
+    <button @click="toggleShowBooks">
+      <p v-if="!showBooks">Show</p>
+      <p v-else="showBooks">Hide</p>
+    </button>
+
+    <br>
+
+    <p>{{ title }}</p>
+    <p>{{ author }}</p>
+    <p>{{ reviews }}</p>
+
+    <br>
+    <div v-if="popular">
+      <p>best seller</p>
+    </div>
+    <p v-else>common</p>
+
+    <button @click="increase()">Up</button>
+    <button @click="decrease()">Down</button>
+    <button @click="randomReview()">Mix</button>
+
+    <br>
+
+    <div class="boxes">
+      <div class="box" @mouseover="handleEvents($event, 'over')">mouse over</div>
+      <div class="box" @mouseleave="handleEvents($event, 'leave')">mouse leave</div>
+      <div class="box" @dblclick="handleEvents($event, 'db click')">double click</div>
+      <div class="box" @mousemove="handleMousemove">
+        {{ x }} {{ y }}
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
