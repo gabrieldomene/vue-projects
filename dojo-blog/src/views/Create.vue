@@ -21,6 +21,8 @@
 <script>
 import { ref } from '@vue/reactivity'
 import { useRouter } from 'vue-router'
+import { db, timestamp } from '../firebase/config'
+import { collection, addDoc } from 'firebase/firestore'
 
 export default {
   setup() {
@@ -42,14 +44,13 @@ export default {
       const post = {
         title: title.value,
         body: body.value,
-        tags: tags.value
+        tags: tags.value,
+        createdAt: timestamp
       }
-      await fetch('http://localhost:3000/posts', {
-        headers: { 'Content-Type': 'application/json' },
-        method: 'POST',
-        body: JSON.stringify(post)
-      })
-      router.push({ name: 'Home' })
+
+      const colRef = collection(db, 'posts');
+      await addDoc(colRef, post);
+      router.push({ name: 'Home' });
     }
 
     return { title, body, tag, handleKeyDown, handleSubmit, tags }

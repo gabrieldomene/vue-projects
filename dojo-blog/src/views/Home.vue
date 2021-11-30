@@ -18,17 +18,15 @@
 import PostList from '@/components/PostList.vue'
 import TagCloud from '@/components/TagCloud.vue'
 import Spinner from '@/components/Spinner.vue'
+import { getCollection } from '../composables/getCollection'
 import { getPosts } from '../composables/getPosts'
 
 export default {
   name: 'Home',
   components: { PostList, Spinner, TagCloud },
   setup() {
-    
-    const { posts, error, load } = getPosts()
-
+    const { posts, error, load } = getPosts('posts')
     load()
-
     return { posts, error }
   }
 }

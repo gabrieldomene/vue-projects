@@ -1,4 +1,7 @@
 import { ref } from '@vue/reactivity'
+// firebase import
+import { db } from '../firebase/config'
+import { doc, getDoc } from 'firebase/firestore'
 
 const getPost = (id) => {
   const post = ref(null)
@@ -6,9 +9,11 @@ const getPost = (id) => {
 
   const load = async () => {
     try {
-      let data = await fetch(`http://localhost:3000/posts/${id}`)
-      if (!data.ok) throw Error('the post does not exist')
-      post.value = await data.json()
+      const docRef = doc(db, 'posts', id)
+      const docReturned = await getDoc(docRef)
+      if (!docReturned.exists()) throw Error('The post does not exist')
+
+      post.value = { ...docReturned.data(), id: docReturned.id }
     } catch (err) {
       error.value = err.message
       console.log(error.value)
