@@ -7,7 +7,7 @@ body {
   width: 90%;
   max-width: 960px;
   margin: 80px auto;
-  border-radius: 1.125px;
+  border-radius: 1.125rem;
   box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
   background: #fff;
 }
@@ -25,4 +25,9 @@ button {
   border: 0;
   border-radius: 1.125rem;
   padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
 }
