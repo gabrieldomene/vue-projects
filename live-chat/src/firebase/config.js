@@ -17,6 +17,6 @@ initializeApp(firebaseConfig);
 // init services
 const db = getFirestore();
 const auth = getAuth();
-const timestamp = serverTimestamp();
+const timestamp = serverTimestamp;
 
 export { db, timestamp, auth }
